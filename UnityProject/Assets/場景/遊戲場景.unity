@@ -1197,6 +1197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cube: {fileID: 1968375453}
   sphere: {fileID: 1763038166}
+  speed: 3
 --- !u!1001 &856880722
 PrefabInstance:
   m_ObjectHideFlags: 0

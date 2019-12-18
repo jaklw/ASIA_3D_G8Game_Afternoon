@@ -4,9 +4,13 @@ public class LearnLerp : MonoBehaviour
 {
     public Transform cube, sphere;
 
-    private void Start()
+    public float speed = 3;
+
+    private void Update()
     {
-        Vector3 pos = Vector3.Lerp(cube.position, sphere.position, 0.5f);
+        Vector3 pos = Vector3.Lerp(cube.position, sphere.position, 0.5f * Time.deltaTime * speed);
         print(pos);
+
+        cube.position = pos;
     }
 }
