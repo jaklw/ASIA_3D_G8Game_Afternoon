@@ -36,6 +36,9 @@ public class Chicken : MonoBehaviour
     /// </summary>
     private void Run()
     {
+        // 如果 動畫 為 撿東西 就 跳出
+        if (ani.GetCurrentAnimatorStateInfo(0).IsName("撿東西")) return;
+
         float v = Input.GetAxis("Vertical");        // W 上 1、S 下 -1、沒按 0
         // rig.AddForce(0, 0, speed * v);           // 世界座標
         // tran.right   區域座標 X 軸
@@ -43,6 +46,8 @@ public class Chicken : MonoBehaviour
         // tran.forward 區域座標 Z 軸
         // Time.deltaTime 當下裝置一幀的時間
         rig.AddForce(tran.forward * speed * v * Time.deltaTime);     // 區域座標
+
+        ani.SetBool("走路開關", v != 0);
     }
 
     /// <summary>
