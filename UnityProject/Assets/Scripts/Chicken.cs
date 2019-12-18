@@ -21,6 +21,9 @@ public class Chicken : MonoBehaviour
     public Transform tran;
     public Rigidbody rig;
     public Animator ani;
+    public AudioSource aud;
+
+    public AudioClip soundBark;
 
     private void Update()
     {
@@ -68,6 +71,8 @@ public class Chicken : MonoBehaviour
         {
             // 按下空白鍵拍翅膀
             ani.SetTrigger("拍翅膀觸發器");
+            // 音源.播放一次音效(音效，音量)
+            aud.PlayOneShot(soundBark, 0.6f);
         }
     }
 

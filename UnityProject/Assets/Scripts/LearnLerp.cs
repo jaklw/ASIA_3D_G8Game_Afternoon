@@ -9,7 +9,7 @@ public class LearnLerp : MonoBehaviour
     private void Update()
     {
         Vector3 pos = Vector3.Lerp(cube.position, sphere.position, 0.5f * Time.deltaTime * speed);
-        print(pos);
+        //print(pos);
 
         cube.position = pos;
     }
